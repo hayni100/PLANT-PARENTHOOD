@@ -2,7 +2,6 @@
   --brown: #554141;
   --green: #3a755f;
   --light_green: #82b9a1;
-  --yellow: #f7f39a;
   --background_color: #e4d4ad;
 }
 
@@ -10,6 +9,22 @@ body {
   background-color: var(--background_color);
   padding: 1rem;
   font-family: 'EB Garamond', serif;
+}
+
+#navbarNav {
+  display: flex;
+  flex-direction: row;
+
+}
+.nav-bar-brand {
+  padding-left: 1rem;
+}
+
+#nav-bar-all {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 40px;
 }
 h1 {
   display: flex;
