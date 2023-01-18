@@ -1,25 +1,30 @@
-<!-- Loop over each object in the projects array -->
-{{#each projects as |project| }}
-<div class="row mb-4 project">
-  <div class="col-md-5">
-    <h2>
-      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      {{{get_emoji}}}
-      <a href="/project/{{project.id}}">{{project.name}}</a>
-    </h2>
-    <p>
-      <span for="img" aria-label="money">💲</span>
-      <!-- Pass needed_funding value to the helper function -->
-      <span class="dollar-amount">{{format_amount project.needed_funding}}</span>
-      needed!
-    </p>
-    <p>Created by {{project.user.name}} on {{format_date project.date_created}}</p>
-  </div>
-  <div class="col-md-7">
-    <p>
-      {{project.description}}
-    </p>
-  </div>
-</div>
-{{/each}}
 
+<header>
+        <h1>Welcome to&nbsp <span id="make-green"> Plant&nbsp</span> Parenthood</h1>
+    </header>
+    <section id="main">
+        <div id="main-page-3-boxes">
+            <img id="main-page-img" src="flower-2.png" alt="plant-image-1">
+            <a href="/login" id="main-page-buttons">Log in to see my plants!</a>
+        </div>
+        <div id="main-page-3-boxes">
+            <img id="main-page-img" src="flower-2.png" alt="plant-image-2">
+            <a href="/signup" id="main-page-buttons">Sign up to join!</a>
+        </div>
+        <div id="main-page-3-boxes">
+            <img id="main-page-img" src="flower-2.png" alt="flower-image-2">
+            <button id="main-page-buttons">Learn more about us!</button>
+        </div>
+    </section>
+
+    <section id="search-bar-main">
+        <div id="search-bar-border">
+        <nav id="search-plants">
+            <form id="search-bar">
+                <input id="search-input" type="search" placeholder="Search for a houseplant by common name!" aria-label="Search">
+                <button id="search-button" type="submit"><span class="material-symbols-outlined">
+                    search </span></button>
+            </form>
+        </nav>
+        </div>
+    </section>

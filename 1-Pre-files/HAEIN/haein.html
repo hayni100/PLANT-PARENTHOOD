@@ -8,27 +8,46 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="heain.css">
-    <title>Main Page</title>
+    <link rel="stylesheet" href="haein.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,500&display=swap" rel="stylesheet">
+
+    <title>Plant Parenthood</title>
 
 </head>
 
 <body>
     <header>
-        <h1 style="color: #392f2f">Welcome to&nbsp <span style="color: #3a7563"> Plant&nbsp</span> Parenthood</h1>
+        <h1>Welcome to&nbsp <span id="make-green"> Plant&nbsp</span> Parenthood</h1>
     </header>
     <section id="main">
-        <div id="logIn">
-            <img src="plant-1.png" alt="plant-image-1" width="200px" height="200px">
-            <button>Log In</button>
+        <div id="main-page-3-boxes">
+            <img id="main-page-img" src="flower-2.png" alt="plant-image-1">
+            <button id="main-page-buttons">Log in to see my plants!</button>
         </div>
-        <div id="signUp">
-            <button>Sign Up</button>
-            <img src="plant-3.png" alt="plant-image-2" width="200px" height="200px">
+        <div id="main-page-3-boxes">
+            <img id="main-page-img" src="flower-2.png" alt="plant-image-2">
+            <button id="main-page-buttons">Sign up to join!</button>
         </div>
-        <div>
-            <img src="plant-3.png" alt="flower-image-2" width="200px" height="200">
-            <button>About Us</button>
+        <div id="main-page-3-boxes">
+            <img id="main-page-img" src="flower-2.png" alt="flower-image-2">
+            <button id="main-page-buttons">Learn more about us!</button>
+        </div>
+    </section>
+
+    <section id="search-bar-main">
+        <div id="search-bar-border">
+        <nav id="search-plants">
+            <form id="search-bar">
+                <input id="search-input" type="search" placeholder="Search for a houseplant by common name!" aria-label="Search">
+                <button id="search-button" type="submit"><span class="material-symbols-outlined">
+                    search </span></button>
+            </form>
+        </nav>
         </div>
     </section>
 </body>
