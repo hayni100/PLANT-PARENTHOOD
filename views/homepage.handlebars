@@ -16,17 +16,19 @@
             <button id="main-page-buttons">Learn more about us!</button>
         </div>
     </section>
-
+{{#if logged_in}}
     <section id="search-bar-main">
         <div id="search-bar-border">
         <nav id="search-plants">
             <form id="search-bar">
-                <input id="search-input" type="search" placeholder="Search for a houseplant by common name!" aria-label="Search">
+                <input id="search-input"  placeholder="Search for a houseplant by common name!" aria-label="Search">
                 <button id="search-button" type="submit"><span class="material-symbols-outlined">
                     search </span></button>
             </form>
         </nav>
         </div>
-    </section>
 
+        <p id="plant-info"></p>
+    </section>
+{{/if}}
     <script src="/js/search-sabina.js"></script>
