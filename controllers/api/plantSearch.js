@@ -5,7 +5,7 @@ const axios = require("axios");
 
 const options = {
     method: 'GET',
-    url: 'https://house-plants.p.rapidapi.com/all',
+    url: 'https://house-plants.p.rapidapi.com/common' + plantname,
     headers: {
       'X-RapidAPI-Key': process.env.api_key,
       'X-RapidAPI-Host': 'house-plants.p.rapidapi.com'
