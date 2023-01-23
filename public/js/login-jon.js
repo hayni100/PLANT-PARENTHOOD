@@ -58,7 +58,7 @@ console.log("LOGMEIN");
 
     if (response.ok) {
       // If successful, redirect the browser to the profile page
-      document.location.replace("/projects");
+      document.location.replace("/myPlants");
     } else {
       alert(response.statusText);
     }

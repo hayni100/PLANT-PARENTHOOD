@@ -3,10 +3,10 @@ const { Plant, User } = require("../models");
 const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
-  console.log("{GET HOME ROUTE");
+  console.log("GET HOME ROUTE");
   try {
     // Get all myplants and JOIN with user data
-    const myPlantsData = await Plant.findAll({
+    const myPlantData = await Plant.findAll({
       include: [
         {
           model: User,
@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
       ],
     });
     // Serialize data so the template can read it
-    const serializedPlants = myPlantsData.map((plant) =>
+    const serializedPlants = myPlantData.map((plant) =>
       plant.get({ plain: true })
     );
     console.log("MYPLANTSDATA", serializedPlants);
@@ -31,7 +31,7 @@ router.get("/", async (req, res) => {
 
 router.get("/myPlants/:id", async (req, res) => {
   try {
-    const myPlantsData = await Plant.findByPk(req.params.id, {
+    const myPlantData = await Plant.findByPk(req.params.id, {
       include: [
         {
           model: User,
@@ -40,10 +40,10 @@ router.get("/myPlants/:id", async (req, res) => {
       ],
     });
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    const myPlants = myPlantsData.get({ plain: true });
+    const myPlant = myPlantData.get({ plain: true });
 
     res.render("myPlants", {
-      ...myPlants,
+      ...myPlant,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -51,13 +51,13 @@ router.get("/myPlants/:id", async (req, res) => {
   }
 });
 
-// Use withAuth middleware to prevent access to route
+// Use withAuth middleware to prevent access to route 
 router.get("/myPlants", withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ["password"] },
-      include: [{ model: myPlants }],
+      include: [{ model: Plant}],
     });
 
     const user = userData.get({ plain: true });
@@ -99,5 +99,15 @@ router.get("/myPlants", (req, res) => {
   }
 
   res.render("myPlants");
+});
+
+router.get("/search", (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_out) {
+    res.redirect("/");
+    return;
+  }
+
+  res.render("search");
 });
 module.exports = router;
