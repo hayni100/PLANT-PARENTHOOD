@@ -35,21 +35,20 @@
       <li class="nav-item active">
         <a id="nav-buttons" id="nav-buttons" class="nav-link" href="/">Home <span class="sr-only"></span></a>
       </li>
-      {{#unless logged_in}}
-      <li class="nav-item">
-        <a id="nav-buttons" class="nav-link" href="/login">Log In/Sign Up</a>
-      </li>
-    {{/unless}}
-
+  
       {{#if logged_in}}
       <li class="nav-item">
-        <a id="nav-buttons" class="nav-link" href="/homepage">Sign Out</a>
+        <a id="logout" class="nav-link" href="/">Sign Out</a>
       </li>
       <li class="nav-item">
         <a id="nav-buttons" class="nav-link" href="/myPlants">My Plants</a>
       </li>
        <li class="nav-item">
         <a id="nav-buttons" class="nav-link" href="/search">Search Plants</a>
+      </li>
+      {{else}}
+        <li class="nav-item">
+        <a id="nav-buttons" class="nav-link" href="/login">Log In/Sign Up</a>
       </li>
       {{/if}}
     </ul>
@@ -61,8 +60,8 @@
       {{{ body }}}
     </main>
   
-  {{#if logged_in}}
-  <script src="./js/logout.js"></script>
+{{#if logged_in}}
+<script src="./js/logout.js"></script>
   {{/if}}
 </body>
 </html>

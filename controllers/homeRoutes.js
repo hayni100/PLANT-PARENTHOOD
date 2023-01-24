@@ -39,7 +39,7 @@ router.get("/myPlants/:id", async (req, res) => {
         },
       ],
     });
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////
     const myPlant = myPlantData.get({ plain: true });
 
     res.render("myPlants", {
@@ -51,13 +51,13 @@ router.get("/myPlants/:id", async (req, res) => {
   }
 });
 
-// Use withAuth middleware to prevent access to route 
+// Use withAuth middleware to prevent access to route
 router.get("/myPlants", withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ["password"] },
-      include: [{ model: Plant}],
+      include: [{ model: Plant }],
     });
 
     const user = userData.get({ plain: true });
@@ -81,15 +81,6 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-router.get("/signup", (req, res) => {
-  // If the user is already logged in, redirect the request to another route
-  if (req.session.logged_in) {
-    res.redirect("/myPlants");
-    return;
-  }
-
-  res.render("signup");
-});
 
 router.get("/myPlants", (req, res) => {
   // If the user is already logged in, redirect the request to another route
@@ -103,7 +94,7 @@ router.get("/myPlants", (req, res) => {
 
 router.get("/search", (req, res) => {
   // If the user is already logged in, redirect the request to another route
-  if (req.session.logged_out) {
+  if (!req.session.logged_in) {
     res.redirect("/");
     return;
   }
