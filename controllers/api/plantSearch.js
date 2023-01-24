@@ -24,16 +24,14 @@ router.get('/plants', (req,res) => {
 module.exports = router;
 =======
 const router = require("express").Router();
-
-
-
-
-
-
-
+const withAuth = require("../../utils/auth")
 require("dotenv").config();
 const axios = require("axios");
 const { Plant } = require("../../models");
+const { User } = require("../../models");
+// /API/
+
+
 
 //:term is considered a query parameter//
 router.get("/plants/:term", async (req, res) => {
