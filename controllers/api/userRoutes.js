@@ -11,6 +11,7 @@ router.post('/', async (req, res) => {
 
       res.status(200).json(userData);
     });
+    console.log("SIGIN UP SUCCESS", userData)
   } catch (err) {
     res.status(400).json(err);
   }
