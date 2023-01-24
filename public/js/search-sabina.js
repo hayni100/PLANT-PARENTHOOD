@@ -1,3 +1,4 @@
+
 const inputValue = document.querySelector("#search-input");
 const plantCardList = document.querySelector("#plant-card-list");
 
@@ -44,13 +45,18 @@ document.getElementById("search-bar").addEventListener("submit", (e) => {
   });
 });
 
-function addPlantToDb(data) {
+const addPlantToDb = async (data) => {
   console.log("add this plant", data);
-  fetch(`/api/myPlants`, {
+  const response = await fetch(`/api/myPlants`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(data), // body data type must match "Content-Type" header
   });
-}
+  if (response.ok) {
+    document.location.replace("/myPlants");
+  } else {
+    alert("failed to add plant");
+  }
+};
