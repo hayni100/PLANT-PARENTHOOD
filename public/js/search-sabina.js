@@ -28,10 +28,17 @@ document.getElementById("search-bar").addEventListener("submit", (e) => {
       const plantSubTitle = document.createElement("p");
       plantSubTitle.innerHTML = plantData.latin;
 
+      //car button //
+      const addPlantBtn = document.createElement("button");
+      addPlantBtn.innerHTML = "Add Plant";
+      addPlantBtn.addEventListener("click", () => {
+        console.log("add this plant", plantData);
+      });
       //build card here//
       plantCard.appendChild(plantCardBody);
       plantCardBody.appendChild(plantName);
       plantCardBody.appendChild(plantSubTitle);
+      plantCardBody.appendChild(addPlantBtn);
       plantCardList.appendChild(plantCard);
     });
   });
