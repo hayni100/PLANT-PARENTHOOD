@@ -1,10 +1,10 @@
 const router = require('express').Router();
 const userRoutes = require('./userRoutes');
-const projectRoutes = require('./projectRoutes');
-const plantSearches = require('./plantSearch');
+const myPlantsRoutes = require('./myPlantsRoutes');
+const plantSearch = require('./plantSearch');
 
 router.use('/users', userRoutes);
-router.use('/projects', projectRoutes);
-router.use('/search',plantSearches);
+router.use('/myPlants', myPlantsRoutes);
+router.use('/search',plantSearch);
 
 module.exports = router;

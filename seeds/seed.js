@@ -11,7 +11,7 @@ const seedDatabase = async () => {
     individualHooks: true,
     returning: true,
   });
-
+  
   for (const plant of plantData) {
     await Plant.create({
       ...plant,
