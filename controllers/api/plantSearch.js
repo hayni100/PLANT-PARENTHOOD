@@ -26,7 +26,7 @@ router.get("/plants/:term", async (req, res) => {
   const response = await axios
     .request(options)
     .then(function (response) {
-      // console.log(response.data);
+      console.log(response);
       return response.data;
     })
     .catch(function (error) {

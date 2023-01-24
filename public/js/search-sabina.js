@@ -8,6 +8,8 @@ document.getElementById("search-bar").addEventListener("submit", (e) => {
   var term = inputValue.value;
   fetch(`/api/search/plants/${term}`).then(async (data) => {
     console.log("THIS IS THE RESPONSE", await data.json());
+    const response=await data.json();
+    
   });
 });
 
