@@ -1,5 +1,7 @@
 # PLANT-PARENTHOOD
 ## About Our Project
+![cover image](./images/landingpage.png)
+
 Our project was made to help plant lovers who want to know how to properly take care of a household plants, wither you are a newbie or an expert we are here to provide new tips in our lovely website. When the user signs up and is login, the user will be able to look up a common household plant and saved the ones they took interest in. To look up the facts the plants needs to stay alive, showing the tempature it needs, the lighting, and how much water. 
 
 Our project was built by three aspiring developers. That had a huge oppurtunity to practice more front and back end skills while using GitHub and Heroku.
@@ -28,15 +30,15 @@ When user is login, it will display "My plants page" from the plants that they h
 
 
 ## Contributors
-* [Rodd Azad] (https://github.com/roddazad)
-* [Haien Kim] (https://github.com/hayni100)
-* [Sabina Ceja-Siete] (https://github.com/unisabi)
+* [Rodd Azad](https://github.com/roddazad)
+* [Haien Kim](https://github.com/hayni100)
+* [Sabina Ceja-Siete](https://github.com/unisabi)
 
 ## License
 
 See `MIT LICENSE` for more information.
 
 ## Acknowledments
-* [API for Plants] (https://rapidapi.com/rosoemawd/api/house-plants)
-* [Bootstrap] (https://getbootstrap.com/docs/5.3/components/card/)
+* [API for Plants](https://rapidapi.com/rosoemawd/api/house-plants)
+* [Bootstrap](https://getbootstrap.com/docs/5.3/components/card/)
 
