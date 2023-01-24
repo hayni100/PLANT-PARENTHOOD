@@ -81,15 +81,15 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-// router.get("/myPlants", (req, res) => {
-//   // If the user is already logged in, redirect the request to another route
-//   if (req.session.logged_out) {
-//     res.redirect("/");
-//     return;
-//   }
+router.get("/myPlants", (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_out) {
+    res.redirect("/");
+    return;
+  }
 
-//   res.render("myPlants");
-// });
+  res.render("myPlants");
+});
 
 router.get("/search", withAuth, async (req, res) => {
   // If the user is already logged in, redirect the request to another route
