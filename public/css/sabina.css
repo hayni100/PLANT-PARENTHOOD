@@ -1,31 +1,31 @@
 /* css for login and signup */
-:root {
+ :root {
     --brown: #554141;
     --green: #3a755f;
     --light_green: #82b9a1;
     --yellow: #f7f39a;
-    --background_color: #e4d4ad;
-}
-.form__input {
+    --background_color: #e4d4ad; 
+ } 
+.login-form {
     display: block;
     width: 100%;
     padding: 0.75rem;
     box-sizing: border-box;
     border-radius: var(--border-radius);
-    border: 1px solid lightgray;
+    border: 1px solid lightgrey;
     outline: none;
-    background: rgb(243, 240, 240);
+    background:transparent(243, 240, 240);
     transition: background 0.2s, border-color 0.2s;
 }
 .form__input:focus {
     border-color: var(--color-primary);
     background: white;
 }
-.form__button {
+.btn.btn-primary {
     width: 100%;
     padding: 1rem 2rem;
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     color:#3a755f;
     border: none;
     border-radius: var(--border-radius);
@@ -60,15 +60,25 @@
     text-decoration: underline;
 }
 
-.signup-form{
+.signup-form {
     display: block;
     width: 100%;
     padding: 0.75rem;
     box-sizing: border-box;
     border-radius: var(--border-radius);
-    border: 1px solid lightgray;
+    border: 1px solid lightgrey;
     outline: none;
     background:transparent(243, 240, 240);
     transition: background 0.2s, border-color 0.2s;
 
 }
+
+.card-body {
+    justify-content: left;
+    background-color: #e4d4ad;
+    font-size: large;
+    font-display: bold;
+    border: 1px #e4d4ad;
+}
+
+
