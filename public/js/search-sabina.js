@@ -32,7 +32,7 @@ document.getElementById("search-bar").addEventListener("submit", (e) => {
       const addPlantBtn = document.createElement("button");
       addPlantBtn.innerHTML = "Add Plant";
       addPlantBtn.addEventListener("click", () => {
-        console.log("add this plant", plantData);
+        addPlantToDb(plantData);
       });
       //build card here//
       plantCard.appendChild(plantCardBody);
@@ -43,45 +43,14 @@ document.getElementById("search-bar").addEventListener("submit", (e) => {
     });
   });
 });
-/* <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div> */
-//Example payload//
-// {
-//   "id": 0,
-//   "latin": "Aeschynanthus lobianus",
-//   "family": "Gesneriaceae",
-//   "common": [
-//     "Lipstick"
-//   ],
-//   "category": "Hanging",
-//   "origin": "Java",
-//   "climate": "Tropical",
-//   "tempmax": {
-//     "celsius": 32,
-//     "fahrenheit": 89.6
-//   },
-//   "tempmin": {
-//     "celsius": 14,
-//     "fahrenheit": 57.2
-//   },
-//   "ideallight": "Bright light",
-//   "toleratedlight": "Direct sunlight",
-//   "watering": "Keep moist between watering. Can be a bit dry between watering",
-//   "insects": [
-//     "Mealy bug",
-//     "Aphid",
-//     "Thrips"
-//   ],
-//   "diseases": "N/A",
-//   "use": [
-//     "Hanging",
-//     "Flower",
-//     "Tertiary"
-//   ]
-// },
+
+function addPlantToDb(data) {
+  console.log("add this plant", data);
+  fetch(`/api/myPlants`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data), // body data type must match "Content-Type" header
+  });
+}
