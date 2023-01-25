@@ -43,3 +43,7 @@ See `MIT LICENSE` for more information.
 * [API for Plants](https://rapidapi.com/rosoemawd/api/house-plants)
 * [Bootstrap](https://getbootstrap.com/docs/5.3/components/card/)
 
+# Deployment 
+
+https://plantparenthood.herokuapp.com/
+https://github.com/hayni100/PLANT-PARENTHOOD
