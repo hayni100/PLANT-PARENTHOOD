@@ -22,15 +22,16 @@ document.getElementById("search-bar").addEventListener("submit", (e) => {
       plantCardBody.classList.add("card-body");
 
       //card title//
-      const plantName = document.createElement("h5");
+      const plantName = document.createElement("h3");
       plantName.innerHTML = plantData.common[0];
 
       //card sub-title//
-      const plantSubTitle = document.createElement("p");
-      plantSubTitle.innerHTML = plantData.latin;
+      const plantSubTitle = document.createElement("h5");
+      plantSubTitle.innerHTML = "Latin [ "+ plantData.latin + " ]";
 
       //car button //
       const addPlantBtn = document.createElement("button");
+      addPlantBtn.classList.add("add-plant-btn")
       addPlantBtn.innerHTML = "Add Plant";
       addPlantBtn.addEventListener("click", () => {
         addPlantToDb(plantData);
