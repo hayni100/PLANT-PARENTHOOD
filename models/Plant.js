@@ -13,27 +13,27 @@ Plant.init(
     },
     name: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     },
     maxTemp: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     },
     minTemp: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     },
     idealLight: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     },
     toleratedLight: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     },
     watering: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     },
     //foreign key//
     user_id: {

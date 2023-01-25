@@ -1,4 +1,21 @@
-<h1>My plants page</h1>
-<h3>My plant cards will appear after I added my plants </h3>
+<h1>{{name}}'s plants page</h1>
+<section id="my-plants-container">
+{{#each plants as |plant|}}
+ <div class="myplants-card">
+  {{!-- <img src="..." class="card-img-top" alt="..."> --}}
+  <div class="card-body">
+    <h4 class="plant-title">Plant Name: {{plant.name}}</h4>
+    <div id="plant-info">
+    <p class="myplantcard-text"> Maximum temp: {{maxTemp}} Fahrenheit</p>
+<p class="myplantcard-text"> Minimum temp:{{minTemp}} Fahrenheit</p>
+<p class="myplantcard-text">Ideal light: {{idealLight}} </p>
+<p class="myplantcard-text">Tolerated light: {{toleratedLight}}</p>
+<p class="myplantcard-text">Watering: {{watering}}</p>
+</div>
+    <a href="" class="btn btn-primary">Delete Plant</a>
+  </div>
+</div>
+{{/each}}
+</section>
 
  <script src="/js/search-sabina.js"></script>

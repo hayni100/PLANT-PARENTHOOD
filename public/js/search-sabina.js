@@ -1,3 +1,4 @@
+
 const inputValue = document.querySelector("#search-input");
 const plantCardList = document.querySelector("#plant-card-list");
 
@@ -21,15 +22,16 @@ document.getElementById("search-bar").addEventListener("submit", (e) => {
       plantCardBody.classList.add("card-body");
 
       //card title//
-      const plantName = document.createElement("h5");
+      const plantName = document.createElement("h3");
       plantName.innerHTML = plantData.common[0];
 
       //card sub-title//
-      const plantSubTitle = document.createElement("p");
-      plantSubTitle.innerHTML = plantData.latin;
+      const plantSubTitle = document.createElement("h5");
+      plantSubTitle.innerHTML = "Latin [ "+ plantData.latin + " ]";
 
       //car button //
       const addPlantBtn = document.createElement("button");
+      addPlantBtn.classList.add("add-plant-btn")
       addPlantBtn.innerHTML = "Add Plant";
       addPlantBtn.addEventListener("click", () => {
         addPlantToDb(plantData);
@@ -44,13 +46,18 @@ document.getElementById("search-bar").addEventListener("submit", (e) => {
   });
 });
 
-function addPlantToDb(data) {
+const addPlantToDb = async (data) => {
   console.log("add this plant", data);
-  fetch(`/api/myPlants`, {
+  const response = await fetch(`/api/myPlants`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(data), // body data type must match "Content-Type" header
   });
-}
+  if (response.ok) {
+    document.location.replace("/myPlants");
+  } else {
+    alert("failed to add plant");
+  }
+};
