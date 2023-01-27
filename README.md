@@ -1,4 +1,5 @@
 # PLANT-PARENTHOOD
+Github repo: https://github.com/hayni100/PLANT-PARENTHOOD
 ## About Our Project
 ![cover image](./images/landingpage.png)
 
